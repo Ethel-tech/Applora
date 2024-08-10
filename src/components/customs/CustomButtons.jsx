@@ -6,7 +6,7 @@ const CustomButton = ({
 }) => {
 	return (
 		<button
-			className="p-2 hover:opacity-90 hover:font-bold rounded-md"
+			className="p-2 text-xl hover:opacity-90 hover:font-bold rounded-md"
 			onClick={onClick}
 			style={{ backgroundColor: bgColor, color: txtColor }}
 		>

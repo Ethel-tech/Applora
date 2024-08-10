@@ -1,0 +1,12 @@
+@import "../../Styles/mixins.scss";
+
+.center-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    &-div {
+        width: 40%;
+        border: 2px solid red;
+    }
+}

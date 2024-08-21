@@ -28,16 +28,16 @@ function Footer() {
       <footer class="bg-[#007BFF] text-white">
         <div class="container mx-auto px-6 md:flex md:justify-between">
           {/*  Left Column  */}
-          <div class="mb-8 md:mb-0">
-            <h2 class="text-xl font-bold mb-4">Applora</h2>
-            {/* <p className="line-clamp-*">
+          <div class="mb-8 md:mb-0 md:w-3/12">
+            <h2 class="text-xl font-bold mb-4 mt-4">Applora</h2>
+            <p className="">
               Applora is designed to provide a comprehensive solution for
               designers, teams, and businesses to deliver exceptional products.
-            </p> */}
+            </p>
           </div>
 
           {/* Services Column  */}
-          <div class="mb-8 md:mb-0">
+          <div class="mb-8 md:mb-0 mt-4">
             <h3 class="text-xl font-semibold mb-4">SERVICES</h3>
             <ul>
               <li>
@@ -69,7 +69,7 @@ function Footer() {
           </div>
 
           {/* <!-- Legal Column --> */}
-          <div class="mb-8 md:mb-0">
+          <div class="mb-8 md:mb-0 mt-4">
             <h3 class="text-xl font-semibold mb-4">LEGAL</h3>
             <ul>
               <li>
@@ -96,13 +96,13 @@ function Footer() {
           </div>
 
           {/* Contact Column  */}
-          <div>
+          <div className="mt-4">
             <h3 class="text-xl font-semibold mb-4">CONTACTS</h3>
             <ul>
               <span className="flex">
                 <svg
-                  width="31"
-                  height="31"
+                  width="18"
+                  height="18"
                   viewBox="0 0 31 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,12 +116,12 @@ function Footer() {
                     fill="#0C335E"
                   />
                 </svg>
-                <li class="flex items-center">Lekki Lagos, Nigeria.</li>
+                <li class="flex items-center px-2">Lekki Lagos, Nigeria.</li>
               </span>
               <span className="flex">
                 <svg
-                  width="25"
-                  height="24"
+                  width="18"
+                  height="18"
                   viewBox="0 0 25 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -132,12 +132,12 @@ function Footer() {
                   />
                 </svg>
 
-                <li class="flex items-center">info@applora.com</li>
+                <li class="flex items-center px-2">info@applora.com</li>
               </span>
               <span className="flex">
                 <svg
-                  width="30"
-                  height="36"
+                  width="18"
+                  height="18"
                   viewBox="0 0 30 36"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -148,12 +148,12 @@ function Footer() {
                   />
                 </svg>
 
-                <li class="flex items-center">+01 234 567 88</li>
+                <li class="flex items-center px-2">+01 234 567 88</li>
               </span>
               <span className="flex">
                 <svg
-                  width="30"
-                  height="36"
+                  width="18"
+                  height="18"
                   viewBox="0 0 30 36"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@ function Footer() {
                   />
                 </svg>
 
-                <li class="flex items-center">+01 234 567 89</li>
+                <li class="flex items-center px-2">+01 234 567 89</li>
               </span>
             </ul>
           </div>

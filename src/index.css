@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+* {
+	margin: 0;
+}
+
 body {
 	font-family: "Nunito", sans-serif;
+	margin-bottom: 0 !important;
 }

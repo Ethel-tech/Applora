@@ -9,11 +9,13 @@ import testbg from "../assets/images/testbg.svg";
 import quote from "../assets/images/quote.svg";
 import map from "../assets/images/map.png";
 import PartnerCarousel from "../components/Partner/partners";
+import LandHero from "../components/Sections/Hero/LandHero";
 import Hero from "../components/Sections/Hero/Hero";
 
 const Home = () => {
 	return (
 		<section>
+			{/* <LandHero /> */}
 			<Hero />
 			<div className="  mx-4 md:mx-24">
 				{/* about us */}

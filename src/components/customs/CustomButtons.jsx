@@ -3,19 +3,12 @@ const CustomButton = ({
 	onClick = () => {},
 	bgColor = "",
 	txtColor = "",
-	border = "",
-	fontSize = "",
 }) => {
 	return (
 		<button
 			className="p-2 hover:opacity-90 hover:font-bold rounded-md"
 			onClick={onClick}
-			style={{
-				backgroundColor: bgColor,
-				color: txtColor,
-				border: border,
-				fontSize: fontSize,
-			}}
+			style={{ backgroundColor: bgColor, color: txtColor }}
 		>
 			{btnText}
 		</button>

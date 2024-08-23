@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuOverlay from "./MenuOverlay";
 import Nav from "./Nav";
 
-function Navigation() {
+function NavStates() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	return (
 		<section>
@@ -12,4 +12,4 @@ function Navigation() {
 	);
 }
 
-export default Navigation;
+export default NavStates;

@@ -7,6 +7,7 @@ import projectExecution from "../../../assets/images/ProjectExecution.svg";
 import streamline from "../../../assets/images/steamlineExpertise.svg";
 import eclipse from "../../../assets/images/Ellipse 65.svg";
 import Pricing from "./Pricing";
+import Community from "./Community";
 
 function FeaturesSection() {
 	return (
@@ -181,6 +182,7 @@ function FeaturesSection() {
 				</div>
 			</div>
 			<Pricing />
+			<Community />
 		</section>
 	);
 }

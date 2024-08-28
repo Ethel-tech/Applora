@@ -7,10 +7,10 @@ function Footer() {
 		<footer>
 			<div className="mt-8 bg-[#85C1E9] p-6">
 				<div className="w-full sm:flex sm:items-center sm:justify-between">
-					<h4 className="text-[#0C335E] text-2xl font-normal ml-8">
+					<h4 className="text-[#0C335E] text-2xl font-normal lg:ml-8">
 						Get connected with us on social media
 					</h4>
-					<div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center mr-8">
+					<div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center lg:mr-8">
 						<span style={{ color: "#0C335E" }}>
 							<FaFacebook size={30} />
 						</span>
@@ -26,8 +26,8 @@ function Footer() {
 					</div>
 				</div>
 			</div>
-			<div class="bg-[#007BFF] text-white p-6">
-				<div class="container mx-auto px-6 md:flex md:justify-between">
+			<div class="bg-[#007BFF] text-white p-6 ">
+				<div class=" mx-auto px-6 md:flex md:justify-between">
 					{/*  Left Column  */}
 					<div class="mb-8 md:mb-0 md:w-3/12">
 						<Link to="/">

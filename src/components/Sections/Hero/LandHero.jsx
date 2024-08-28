@@ -23,7 +23,11 @@ function LandHero() {
 						</p>
 						<div className="md:flex block gap-5 mt-10">
 							<div className="basis-3/4">
-								<CustomInput placeholder="Enter your email" bgCol="#E7F3FB" />
+								<CustomInput
+									placeholder="Enter your email"
+									bgCol="#E7F3FB"
+									borderRad="0.375rem"
+								/>
 							</div>
 							<div className="w-auto w-full basis-1/4 max-md:mt-5">
 								<CustomButton

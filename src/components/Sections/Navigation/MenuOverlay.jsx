@@ -1,6 +1,6 @@
 import React from "react";
-import { IoClose } from "react-icons/io5";
 import CustomButton from "../../customs/CustomButtons";
+import { Link } from "react-router-dom";
 
 const MenuOverlay = ({ navbarOpen, setNavbarOpen }) => {
 	return (
@@ -11,40 +11,45 @@ const MenuOverlay = ({ navbarOpen, setNavbarOpen }) => {
 		>
 			<div>
 				<ul className="mt-10 flex flex-col items-start text-[#85C1E9]">
-					<a
-						href="#"
+					<Link
+						to="/"
 						onClick={(e) => {
-							e.preventDefault();
 							setNavbarOpen(false);
 						}}
 					>
 						<li className="text-[#85C1E9]">Home</li>
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/#about"
 						onClick={(e) => {
-							e.preventDefault();
 							setNavbarOpen(false);
 						}}
 					>
 						<li>About</li>
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/services"
 						onClick={(e) => {
-							e.preventDefault();
 							setNavbarOpen(false);
 						}}
 					>
 						<li>Services</li>
-					</a>
+					</Link>
 					<div className="flex gap-10 mt-10">
-						<CustomButton btnText="Login" bgColor="white" txtColor="#85C1E9" />
-						<CustomButton
-							btnText="Sign Up"
-							bgColor="#85C1E9"
-							txtColor="white"
-						/>
+						<Link to="/login">
+							<CustomButton
+								btnText="Login"
+								bgColor="white"
+								txtColor="#85C1E9"
+							/>
+						</Link>
+						<Link to="/sign-up">
+							<CustomButton
+								btnText="Sign Up"
+								bgColor="#85C1E9"
+								txtColor="white"
+							/>
+						</Link>
 					</div>
 				</ul>
 			</div>

@@ -1,30 +1,43 @@
 import applora from "../../../assets/images/Applora.svg";
 import "./navigation.scss";
 import CustomButton from "../../customs/CustomButtons";
+import { Link } from "react-router-dom";
 
 function Nav({ navbarOpen, setNavbarOpen }) {
 	return (
-		<nav className="navigation bg-white flex p-10 md:max-lg:px-10 px-20 max-sm:px-7 max-sm:p-7  items-center justify-between text-xl font-normal text-['#0C335E']">
+		<nav className=" bg-white flex p-10 md:max-lg:px-10 px-20 max-sm:px-7 max-sm:p-7  items-center justify-between text-xl font-normal text-['#0C335E']">
 			<div className="navigation-logo flex-grow z-20">
-				<img src={applora} alt="logo" className="logo" />
+				<Link to="/">
+					<img src={applora} alt="logo" className="logo" />
+				</Link>
 			</div>
 			<div id="menu-items" className="w-7/12 flex justify-between md:max-lg">
 				<div className="navigation-list-div content-center w-2/5 md:max-lg:w-auto">
 					<ul className="navigation-list list-none m-0 p-0 overflow-hidden flex md:max-lg:gap-5 justify-between ">
-						<a href="#Features">
+						<Link to="/">
 							<li className="navigation-list-link">Home</li>
-						</a>
-						<li className="navigation-list-link">About</li>
-						<li className="navigation-list-link">Service</li>
+						</Link>
+						<Link to="/#about">
+							<li className="navigation-list-link">About</li>
+						</Link>
+
+						<Link to="/services">
+							<li className="navigation-list-link">Services</li>
+						</Link>
 					</ul>
 				</div>
 				<div className="navigation-btn flex gap-5 font-bold">
-					<CustomButton btnText="Login" />
-					<CustomButton
-						btnText="Sign Up"
-						txtColor="#ffffff"
-						bgColor="#007BFF"
-					/>
+					<Link to="/login">
+						<CustomButton btnText="Login" />
+					</Link>
+
+					<Link to="/sign-up">
+						<CustomButton
+							btnText="Sign Up"
+							txtColor="#ffffff"
+							bgColor="#007BFF"
+						/>
+					</Link>
 				</div>
 			</div>
 

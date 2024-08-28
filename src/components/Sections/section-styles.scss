@@ -1,7 +1,8 @@
 @import "../../Styles/mixins.scss";
 
 h1,
-h2 {
+h2,
+h3 {
     font-size: 2.5rem !important;
     line-height: 1.25;
     font-weight: 700 !important;
@@ -21,7 +22,6 @@ h2 {
     li {
         padding: 3px 0px 3px 0px;
         margin-bottom: 2%;
-        border: 2px solid blue;
         align-content: center;
         align-self: center;
 
@@ -48,26 +48,22 @@ h2 {
 
     &-div {
         width: 40%;
-        border: 2px solid red;
     }
 }
 
 .flex-div {
-    border: 2px solid red;
     display: flex;
 
     &-one {
         width: 60%;
-        border: 2px solid black;
     }
 
     &-two {
         width: 40%;
-        border: 2px solid black;
     }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (min-width: 320px) {
     .flex-div {
         display: block;
 
@@ -80,13 +76,28 @@ h2 {
             width: auto !important;
         }
     }
-
-
 }
 
+@media screen and (min-width: 481px) {
+    .flex-div {
+        display: flex;
 
+        &-one {
+            width: 60% !important;
+        }
+
+        &-two {
+            width: 40% !important;
+            padding-top: 0 !important;
+        }
+    }
+}
 
 .time-tracking {
     background-image: url(../../assets/images/TimeTracking.svg);
 
+}
+
+.home {
+    overflow-x: hidden;
 }

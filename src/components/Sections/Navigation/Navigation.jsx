@@ -5,7 +5,7 @@ import Nav from "./Nav";
 function Navigation() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	return (
-		<section>
+		<section className="navigation">
 			<Nav navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
 			<MenuOverlay navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
 		</section>

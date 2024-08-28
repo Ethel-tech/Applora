@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import project from "../assets/images/project.png";
 import invoice from "../assets/images/invoice.png";
 import task from "../assets/images/task.png";
@@ -10,36 +10,52 @@ import quote from "../assets/images/quote.svg";
 import map from "../assets/images/map.png";
 import PartnerCarousel from "../components/Partner/partners";
 import LandHero from "../components/Sections/Hero/LandHero";
-import Hero from "../components/Sections/Hero/Hero";
+import "../components/Sections/section-styles.scss";
+import Navigation from "../components/Sections/Navigation/Navigation";
+import eclipse from "../assets/images/Ellipse 65.svg";
+import Footer from "../components/Sections/Footer/footer";
+import { Link, useLocation } from "react-router-dom";
 
 const Home = () => {
-	return (
-		<section>
-			{/* <LandHero /> */}
-			<Hero />
-			<div className="  mx-4 md:mx-24">
-				{/* about us */}
-				<h2 className="text-3xl mt-4  text-[#0C335E] font-semibold underline mb-5">
-					About Us
-				</h2>
-				<h3 className="lg:w-6/12 text-left mb-5 w-full text-[#0C335E]">
-					Applora is a vibrant freelance platform designed specifically for
-					product designers. Our mission is to connect talented designers with
-					innovative companies fostering collaboration and creativity.
-				</h3>
-			</div>
+	const { hash } = useLocation();
 
+	useEffect(() => {
+		if (hash) {
+			const element = document.getElementById(hash.replace("#", ""));
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+	}, [hash]);
+
+	return (
+		<section className="home">
+			<Navigation />
+			<LandHero />
+			{/* about us */}
+			<div id="about" className="home center-text mx-20 mt-10 max-lg:mx-10">
+				<div className="center-text-div max-lg:w-auto">
+					<h2>About Us</h2>
+					<p>
+						Applora is a vibrant freelance platform designed specifically for
+						product designers. Our mission is to connect talented designers with
+						innovative companies fostering collaboration and creativity.
+					</p>
+				</div>
+			</div>
 			{/* core values */}
-			<div className="m-8">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-96">
-					<span className="hidden md:block" style={{ width: "300%" }}>
-						<img src={aboutimg} alt="about" />
-					</span>
-					<div className="lg:gap-10 lg:left-10">
-						<h2 className="md:text-right md:text-xl text-[#0C335E] text-2xl mt-4 font-semibold underline mb-5 text-left ">
-							Our Core Values
-						</h2>
-						<ul className="ps-0 space-y-1 list-disc list-inside">
+			<div>
+				<div className="flex-div gap-20 max-lg:mx-10 mt-20 mx-20">
+					<div className="flex-div-one max-lg:w-auto">
+						<img
+							src={aboutimg}
+							alt="Stramline expertise"
+							className="object-cover"
+						/>
+					</div>
+					<div className="flex-div-two max-lg:w-auto pt-16">
+						<h2 className="underline">Our Core Values</h2>
+						<ul className="ps-0 space-y-1 lg:mt-10 mt-5 list-disc list-inside">
 							<li>Integrity</li>
 							<li>Quality</li>
 							<li>Professionalism</li>
@@ -49,20 +65,16 @@ const Home = () => {
 							<li>Accountability</li>
 							<li>Customer focus</li>
 						</ul>
-						{/* </div> */}
 					</div>
 				</div>
 			</div>
 			{/* end of core values */}
 
 			{/* task */}
-			<section className="container mx-auto py-12 px-6">
+			<section className="container mx-auto py-12 px-6 text-base">
 				<div>
-					<h2 className="text-2xl font-semibold text-[#0C335E] text-center">
-						Automate Tasks and
-					</h2>
-					<h2 className="text-2xl font-semibold text-center mb-2 text-[#0C335E] leading-loose">
-						workflow with Applora
+					<h2 className="md:text-5xl text-2xl font-bold text-[#0C335E] text-center">
+						Automate Tasks and workflow with Applora
 					</h2>
 				</div>
 				<p className="lg:m-auto lg:mb-8 lg:w-1/2 text-center text-[#0C335E] font-medium mb-8 ">
@@ -80,7 +92,7 @@ const Home = () => {
 							className="w-full h-64 object-cover"
 						/>
 						<div className="absolute inset-0 flex items-center justify-center">
-							<h3 className="lg:mt-32 lg:mr-36 text-[#0C335E] text-xl font-semibold mr-20">
+							<h3 className="lg:mt-32 lg:mr-36 ml-10 text-[#0C335E] text-xl font-semibold mr-20">
 								Project Execution
 							</h3>
 						</div>
@@ -93,7 +105,7 @@ const Home = () => {
 							className="w-full h-64 object-cover"
 						/>
 						<div className="absolute inset-0 flex items-center justify-center">
-							<h3 className="lg:-mt-28 lg:mr-48 text-[#0C335E] text-xl font-semibold mr-20">
+							<h3 className="lg:-mt-28 lg:mr-48 ml-10 text-[#0C335E] text-xl font-semibold mr-20">
 								Task Execution
 							</h3>
 						</div>
@@ -105,8 +117,8 @@ const Home = () => {
 							alt="Invoicing"
 							className="w-full h-64 object-cover"
 						/>
-						<div className="absolute inset-0  flex items-center justify-center">
-							<h3 className="lg:mt-32 lg:mr-36 text-[#0C335E] text-xl font-semibold mr-20">
+						<div className="absolute inset-0 flex items-center justify-center">
+							<h3 className="lg:mt-32 lg:mr-36 text-[#0C335E] text-xl font-semibold mr-20 ml-10">
 								Invoicing
 							</h3>
 						</div>
@@ -115,7 +127,7 @@ const Home = () => {
 			</section>
 
 			{/* explore services */}
-			<section className="max-w-lg mx-auto">
+			<section className="max-w-lg mx-auto text-base">
 				<div className="flex">
 					<div className="relative w-8/12 justify-center m-auto md:w/12 lg:w-5/12 sm-w-full">
 						<button
@@ -155,24 +167,24 @@ const Home = () => {
 			{/* end of task */}
 
 			{/* join */}
-			<div className="relative mt-6">
+			<div className="relative mt-6 text-base">
 				<img src={join} alt="join" />
 				<div className="lg-mt-44 flex absolute inset-0 items-center justify-center m-auto gap-4 mt-4 ">
 					<div className="lg:mb-50 md:sm:mb-28 sm:md:text-2xl flex absolute mb-16 m-auto text-center text-medium text-[#0C335E] font-semibold">
-						Join Applora Now{" "}
+						Join Applora Now
 					</div>
 					<button className="lg:px-14 lg:text-xl text-[#0C335E] font-semibold text-medium border px-6 py-2 bg-white rounded-2xl">
-						Sign Up
+						<Link to="/sign-up">Sign Up</Link>
 					</button>
 					<button className="lg:px-14 lg:text-xl text-[#0C335E] font-semibold text-medium border px-6 py-2 bg-white rounded-2xl">
-						Login
+						<Link to="/login">Login</Link>
 					</button>
 				</div>
 			</div>
 			{/* end of join */}
 
 			{/* testimonial */}
-			<section className="bg-white px-4 py-12 md:py-24">
+			<section className="bg-white px-4 py-12 md:py-24 text-base">
 				<div className="max-w-screen-xl mx-auto">
 					<h2 className="font-black text-[#0C335E] text-center text-2xl leading-none uppercase max-w-2xl mx-auto mb-12">
 						Testimonies
@@ -326,69 +338,69 @@ const Home = () => {
 
 			<PartnerCarousel />
 
-			<section className="relative isolate bg-white">
-				<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-					<div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-32">
-						<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-							<div className="absolute left-4 mx-2 px-2 overflow-hidden  lg:w-1/2">
+			<section className="relative isolate bg-white text-base ">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 ">
+					<div className=" relative px-6 pb-20 lg:pt-24 sm:pt-32 lg:static lg:px-8 lg:py-32">
+						<div className=" hidden md:hidden sm:hidden lg:block mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+							<div className=" absolute left-4 mx-2 px-2 overflow-hidden  lg:w-1/2">
 								<img
 									src={map}
 									alt="map"
-									className="relative hidden md:hidden sm:hidden lg:block"
+									className=" relative hidden md:hidden sm:hidden lg:block"
 								/>
 							</div>
 						</div>
 					</div>
-					<form className="px-2 mx-12 pb-24 pt-20 mt-8 sm:pb-32 lg:px-8 lg:py-32">
-						<div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-							<h2 className="text-3xl text-left mb-4 font-bold tracking-tight text-[#0C335E]">
+					<form className=" px-2 mx-12 pb-24 lg:pt-20 lg:mt-8 sm:pb-32 lg:px-8 lg:py-32">
+						<div className=" mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+							<h2 className=" text-3xl text-left mb-4 font-bold tracking-tight text-[#0C335E]">
 								Contact Us
 							</h2>
-							<p className="text-sm text-left mb-6 font-normal text-[#09223E]">
+							<p className=" text-sm text-left mb-6 font-normal text-[#09223E]">
 								Do you have any questions or comments? Our team will respond to
 								your enquiry as soon as possible.
 							</p>
-							<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+							<div className=" grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 								<div>
-									<div className="mt-2.5">
+									<div className=" mt-2.5">
 										<input
 											type="email"
 											id="email"
 											placeholder="Enter your Email"
 											autocomplete="email"
-											className="block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 											name="email"
 										/>
 									</div>
 								</div>
 								<div>
-									<div className="mt-2.5">
+									<div className=" mt-2.5">
 										<input
 											type="text"
 											id="name"
 											placeholder="Enter your Name"
 											autocomplete="name"
-											className="block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-											name="ame"
+											className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											name="name"
 										/>
 									</div>
 								</div>
-								<div className="sm:col-span-2">
-									<div className="mt-2.5">
+								<div className=" sm:col-span-2">
+									<div className=" mt-2.5">
 										<textarea
 											id="message"
 											placeholder="Enter your message"
 											rows="6"
-											className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+											className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 											name="message"
 										></textarea>
 									</div>
 								</div>
 							</div>
-							<div className="mt-8 flex justify-center">
+							<div className=" mt-8 flex justify-center">
 								<button
 									type="submit"
-									className="bg-[#F66030] px-12 md:px-56 py-3 text-sm font-semibold text-[#0C335E] transition-colors duration-150 ease-in-out hover:border-blue-[#85C1E9] hover:bg-[#85C1E9]"
+									className=" bg-[#F66030] px-12 md:px-56 py-3 text-sm font-semibold text-[#0C335E] transition-colors duration-150 ease-in-out hover:border-blue-[#85C1E9] hover:bg-[#85C1E9]"
 								>
 									SUBMIT
 								</button>
@@ -397,6 +409,7 @@ const Home = () => {
 					</form>
 				</div>
 			</section>
+			<Footer />
 		</section>
 	);
 };

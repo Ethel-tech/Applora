@@ -4,11 +4,11 @@ import lady from "../../../assets/images/lady.svg";
 
 function Hero() {
 	return (
-		<section className="h-full px-24 py-14 bg-[#85C1E9] text-[#09223E] text-base">
-			<div className="flex gap-32">
-				<div className="w-7/12 self-center">
+		<section className="h-full lg:mt-20 md:mt-32 mt-24 px-24 py-14 max-md:px-10 bg-[#85C1E9] text-[#09223E] text-base">
+			<div className="flex gap-32 max-md:block">
+				<div className="w-7/12 self-center max-md:w-auto">
 					<div>
-						<h1 className="text-[#0C335E] leading-snug text-5xl font-semibold">
+						<h1 className="text-[#0C335E] leading-snug text-5xl max-md:text-2xl font-semibold ">
 							Automate your workflow with Applora
 						</h1>
 						<p className="mt-7">
@@ -29,8 +29,8 @@ function Hero() {
 						</p>
 					</div>
 				</div>
-				<div className="w-2/5">
-					<img src={lady} alt="lady typing" />
+				<div className="w-2/5 hidden md:block">
+					<img src={lady} alt="lady typing" style={{ objectFit: "cover" }} />
 				</div>
 			</div>
 		</section>

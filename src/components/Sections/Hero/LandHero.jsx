@@ -8,7 +8,7 @@ function LandHero() {
 	return (
 		<section className="hero-bg md:pb-12 lg:mt-36 md:mt-32 mt-24 h-full px-24 max-md:py-10 max-md:px-10 bg-white text-[#09223E] text-base">
 			<div className="flex lg:flex-row md:flex-col md:gap-20 lg:gap-32 max-md:block max-md:w-auto">
-				<div className="lg:w-2/5 order-2 w-auto self-center">
+				<div className="lg:w-2/5 lg:order-1 order-2 w-auto self-center">
 					<div>
 						<h1 className="text-[#0C335E] leading-snug text-4xl max-md:text-2xl font-normal ">
 							<span className="text-[#007BFF] text-5xl max-md:text-3xl font-bold pr-4">
@@ -40,7 +40,7 @@ function LandHero() {
 						</div>
 					</div>
 				</div>
-				<div className="lg:w-1/2 order-1 w-auto hidden md:block">
+				<div className="lg:w-1/2 lg:order-2 order-1 w-auto hidden md:block">
 					<img src={heroimg} alt="lady typing" />
 				</div>
 			</div>

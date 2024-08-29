@@ -16,6 +16,12 @@ h3 {
         font-size: 1.8rem !important;
     }
 
+    .task {
+        h3 {
+            font-size: 1.8rem !important;
+        }
+    }
+
 }
 
 .ul-list-img {
@@ -106,4 +112,16 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 3% !important;
+}
+
+.join-section {
+    background-image: url(../../assets/images/join.svg);
+    background-size: cover;
+}
+
+.task {
+    h3 {
+        font-size: 2.2rem !important;
+        line-height: 1.25 !important;
+    }
 }

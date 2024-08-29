@@ -13,6 +13,8 @@ import LandHero from "../components/Sections/Hero/LandHero";
 import "../components/Sections/section-styles.scss";
 import Navigation from "../components/Sections/Navigation/Navigation";
 import eclipse from "../assets/images/Ellipse 65.svg";
+import David from "../assets/images/David.svg";
+import Jeremy from "../assets/images/Jeremy.svg";
 import Footer from "../components/Sections/Footer/footer";
 import { Link, useLocation } from "react-router-dom";
 
@@ -71,19 +73,19 @@ const Home = () => {
 			{/* end of core values */}
 
 			{/* task */}
-			<section className="container mx-auto py-12 px-6 text-base">
+			<section className="container task mx-auto py-12 px-6 text-base">
 				<div>
 					<h2 className="md:text-5xl text-2xl font-bold text-[#0C335E] text-center">
 						Automate Tasks and workflow with Applora
 					</h2>
 				</div>
-				<p className="lg:m-auto lg:mb-8 lg:w-1/2 text-center text-[#0C335E] font-medium mb-8 ">
+				<p className="lg:m-auto lg:mb-8 lg:w-1/2 text-center text-[#0C335E] font-medium mt-5 mb-8 ">
 					Transform the way you work with Applora. Our platform is designed to
 					streamline your daily tasks and workflows, allowing you to focus on
 					what truly matters. Eliminate repetitive tasks, and improve efficiency
 					across your projects.
 				</p>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-12">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8">
 					{/* <!-- Project Execution --> */}
 					<div className="relative rounded-3xl overflow-hidden shadow-lg ">
 						<img
@@ -167,162 +169,171 @@ const Home = () => {
 			{/* end of task */}
 
 			{/* join */}
-			<div className="relative mt-6 text-base">
-				<img src={join} alt="join" />
-				<div className="lg-mt-44 flex absolute inset-0 items-center justify-center m-auto gap-4 mt-4 ">
-					<div className="lg:mb-50 md:sm:mb-28 sm:md:text-2xl flex absolute mb-16 m-auto text-center text-medium text-[#0C335E] font-semibold">
-						Join Applora Now
+			<section className="join-section flex justify-center content-center mt-6  text-base w-screen h-auto">
+				<div className="flex flex-col gap-8 lg:gap-14 mt-32 mb-10 text-center">
+					<div className="sm:md:text-2xl text-center text-medium text-white font-semibold">
+						<h2>Join Applora Now</h2>
 					</div>
-					<button className="lg:px-14 lg:text-xl text-[#0C335E] font-semibold text-medium border px-6 py-2 bg-white rounded-2xl">
-						<Link to="/sign-up">Sign Up</Link>
-					</button>
-					<button className="lg:px-14 lg:text-xl text-[#0C335E] font-semibold text-medium border px-6 py-2 bg-white rounded-2xl">
-						<Link to="/login">Login</Link>
-					</button>
+					<div className="flex gap-7 lg:gap-16">
+						<button className="lg:px-14 lg:text-3xl text-[#0C335E] font-bold text-medium border px-6 py-2 bg-white rounded-2xl">
+							<Link to="/sign-up">Sign Up</Link>
+						</button>
+						<button className="lg:px-14 lg:text-3xl text-[#0C335E] font-bold text-medium border px-6 py-2 bg-white rounded-2xl">
+							<Link to="/login">Login</Link>
+						</button>
+					</div>
 				</div>
-			</div>
+			</section>
 			{/* end of join */}
 
 			{/* testimonial */}
-			<section className="bg-white px-4 py-12 md:py-24 text-base">
-				<div className="max-w-screen-xl mx-auto">
+
+			<section className="bg-white lg:px-32 px-10 py-12 md:py-24 text-base">
+				<div className=" mx-auto">
 					<h2 className="font-black text-[#0C335E] text-center text-2xl leading-none uppercase max-w-2xl mx-auto mb-12">
 						Testimonies
 					</h2>
-					<div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 relative ">
-						<div className="bg-[#85C1E9] rounded-lg p-8 text-center md:w-1/3 relative pt-24 ">
-							<img src={quote} alt="quote" className="absolute top-4 left-9" />
-							<div className="mt-4">
+					<div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:gap-7 relative ">
+						<div className="bg-[#85C1E9] rounded-lg lg:p-8 px-5 py-20 text-center md:w-1/3 relative lg:pt-24">
+							<img
+								src={quote}
+								alt="quote"
+								className="absolute lg:top-4 top-3 left-3 left-9 lg:w-auto w-10"
+							/>
+							<div className="lg:mt-4">
 								<img
 									src={testpic}
 									alt="testpic"
 									style={{
 										position: "absolute",
-										top: "2rem",
-										left: "9rem",
-										zIndex: "999",
+										zIndex: "2",
 										objectFit: "cover",
 									}}
-									className="justify-center m-auto pt-8 mt-2 "
+									className="top-6 left-12 right-12 justify-center lg:top-14 lg:right-46 lg:left-46 m-auto pt-8 mt-2"
 								/>
 							</div>
 							<div className="relative top-11 mb-8">
 								<img
 									src={testbg}
 									alt="bg"
-									style={{ maxWidth: "100%" }}
-									className=" h-auto object-cover rounded-lg"
+									style={{ maxHeight: "100%" }}
+									className="h-60 lg:h-auto w-full object-cover rounded-lg"
 								/>
-								<div className="absolute inset-0 flex flex-col items-center justify-center p-2 md:p-4">
-									<p className="md:text-start md:p-0 md:text-medium  text-base font-light italic text-white p-0 text-center mt-2 md:-mt-8 leading-tight">
+								<div className="absolute lg:top-5 inset-0 flex flex-col items-center justify-center p-4 md:p-4">
+									<p className="md:text-start md:p-0 text-xs lg:text-[10px] font-light text-[#09223e] p-0 text-center -mt-12 md:-mt-16 leading-tight">
 										Applora has been a game changer for my freelance design
 										career. I have found consistent, high quality projects and
 										clients who appreciate my work.
 									</p>
-									<span
-										className="font-base text-sm text-[#09223E] mt-2"
-										style={{ marginBottom: "-1rem" }}
-									>
-										Name: Emily R,
-									</span>
-									<span
-										className="font-base text-[#09223E] mt-4"
-										style={{ fontSize: "0.6rem" }}
-									>
-										{" "}
-										UI/UX Designer
-									</span>
+									<div className="flex flex-col absolute bottom-8">
+										<span
+											className="font-semibold text-sm text-[#09223E] mt-2"
+											style={{ marginBottom: "-1.3rem" }}
+										>
+											Name: Emily R,
+										</span>
+										<span
+											className="text-[10px] text-[#09223E] mt-4"
+											style={{ fontSize: "0.6rem" }}
+										>
+											UI/UX Designer
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-
-						<div className="bg-[#85C1E9] rounded-lg p-8 text-center md:w-1/3 relative pt-24">
-							<img src={quote} alt="quote" className="absolute top-4 left-9" />
-							<div className="mt-4">
+						<div className="bg-[#85C1E9] rounded-lg lg:p-8 px-5 py-20 text-center md:w-1/3 relative lg:pt-24">
+							<img
+								src={quote}
+								alt="quote"
+								className="absolute lg:top-4 top-3 left-3 left-9 lg:w-auto w-10"
+							/>
+							<div className="lg:mt-4">
 								<img
 									src={testpic}
 									alt="testpic"
 									style={{
 										position: "absolute",
-										top: "2rem",
-										left: "9rem",
-										zIndex: "999",
+										zIndex: "2",
 										objectFit: "cover",
 									}}
-									className="flex justify-center items-center pt-8 mt-2 "
+									className="top-6 left-12 right-12 justify-center lg:top-14 lg:right-46 lg:left-46 m-auto pt-8 mt-2"
 								/>
 							</div>
-							<div className="relative top-11">
+							<div className="relative top-11 mb-8">
 								<img
 									src={testbg}
 									alt="bg"
-									style={{ maxWidth: "100%" }}
-									className=" h-auto object-cover rounded-lg"
+									style={{ maxHeight: "100%" }}
+									className="h-60 lg:h-auto w-full object-cover rounded-lg"
 								/>
-								<div className="absolute inset-0 flex flex-col items-center justify-center p-2 md:p-4">
-									<p className="md:text-start md:p-0 md:text-medium  text-base font-light italic text-white p-0 text-center mt-2 md:-mt-8 leading-tight">
+								<div className="absolute lg:top-5 inset-0 flex flex-col items-center justify-center p-4 md:p-4">
+									<p className="md:text-start md:p-0 text-xs lg:text-[10px] font-light text-[#09223e] p-0 text-center -mt-12 md:-mt-16 leading-tight">
 										I was struggling to find clients who understood my design
 										style, but Applora platform connected me with companies who
 										share my vision.
 									</p>
-									<span
-										className="font-base text-sm text-[#09223E] mt-6"
-										style={{ marginBottom: "-1rem" }}
-									>
-										Name: David K,
-									</span>
-									<span
-										className="font-base text-[#09223E] mt-4"
-										style={{ fontSize: "0.6rem" }}
-									>
-										{" "}
-										UI/UX Designer
-									</span>
+									<div className="flex flex-col absolute bottom-8">
+										<span
+											className="font-semibold text-sm text-[#09223E] mt-2"
+											style={{ marginBottom: "-1.3rem" }}
+										>
+											Name: David K,
+										</span>
+										<span
+											className="text-[10px] text-[#09223E] mt-4"
+											style={{ fontSize: "0.6rem" }}
+										>
+											UI/UX Designer
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-
-						<div className="bg-[#85C1E9] rounded-lg p-8 text-center md:w-1/3 relative pt-24">
-							<img src={quote} alt="quote" className="absolute top-4 left-9" />
-							<div className="mt-4">
+						<div className="bg-[#85C1E9] rounded-lg lg:p-8 px-5 py-20 text-center md:w-1/3 relative lg:pt-24">
+							<img
+								src={quote}
+								alt="quote"
+								className="absolute lg:top-4 top-3 left-3 left-9 lg:w-auto w-10"
+							/>
+							<div className="lg:mt-4">
 								<img
 									src={testpic}
 									alt="testpic"
 									style={{
 										position: "absolute",
-										top: "2rem",
-										left: "9rem",
-										zIndex: "999",
+										zIndex: "2",
 										objectFit: "cover",
 									}}
-									className="justify-center m-auto pt-8 mt-2 "
+									className="top-6 left-12 right-12 justify-center lg:top-14 lg:right-46 lg:left-46 m-auto pt-8 mt-2"
 								/>
 							</div>
-							<div className="relative top-11">
+							<div className="relative top-11 mb-8">
 								<img
 									src={testbg}
 									alt="bg"
-									style={{ maxWidth: "100%" }}
-									className=" h-auto object-cover rounded-lg"
+									style={{ maxHeight: "100%" }}
+									className="h-60 lg:h-auto w-full object-cover rounded-lg"
 								/>
-								<div className="absolute inset-0 flex flex-col items-center justify-center p-2 md:p-4">
-									<p className="md:text-start md:p-0 md:text-medium  text-base font-light italic text-white p-0 text-center mt-2 md:-mt-8 leading-tight">
+								<div className="absolute lg:top-5 inset-0 flex flex-col items-center justify-center p-4 md:p-4">
+									<p className="md:text-start md:p-0 text-xs lg:text-[10px] font-light text-[#09223e] p-0 text-center -mt-12 md:-mt-16 leading-tight">
 										Applora community features have helped me learn from other
 										designers and stay up to date on industry trends.
 									</p>
-									<span
-										className="font-base text-sm text-[#09223E] mt-6"
-										style={{ marginBottom: "-1rem" }}
-									>
-										Name: Sarah K,
-									</span>
-									<span
-										className="font-base text-[#09223E] mt-4"
-										style={{ fontSize: "0.6rem" }}
-									>
-										{" "}
-										UI/UX Designer
-									</span>
+									<div className="flex flex-col absolute bottom-8">
+										<span
+											className="font-semibold text-sm text-[#09223E] mt-2"
+											style={{ marginBottom: "-1.3rem" }}
+										>
+											Name: Sarah K,
+										</span>
+										<span
+											className="text-[10px] text-[#09223E] mt-4"
+											style={{ fontSize: "0.6rem" }}
+										>
+											UI/UX Designer
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>

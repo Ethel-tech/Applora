@@ -250,7 +250,7 @@ const Home = () => {
 							/>
 							<div className="lg:mt-4">
 								<img
-									src={testpic}
+									src={David}
 									alt="testpic"
 									style={{
 										position: "absolute",
@@ -298,7 +298,7 @@ const Home = () => {
 							/>
 							<div className="lg:mt-4">
 								<img
-									src={testpic}
+									src={Jeremy}
 									alt="testpic"
 									style={{
 										position: "absolute",

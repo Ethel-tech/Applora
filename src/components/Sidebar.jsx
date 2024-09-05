@@ -179,10 +179,10 @@ function Sidebar() {
                 </span>
                 <div className="mx-2">
                   <Dropdown label="Team" inline>
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
-                    <Dropdown.Item>Settings</Dropdown.Item>
                     <Dropdown.Item>Earnings</Dropdown.Item>
-                    <Dropdown.Item>Sign out</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
                   </Dropdown>
                 </div>
               </a>
@@ -211,10 +211,10 @@ function Sidebar() {
                 </span>
                 <div className="mx-2">
                   <Dropdown label="Clients" inline>
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
-                    <Dropdown.Item>Settings</Dropdown.Item>
                     <Dropdown.Item>Earnings</Dropdown.Item>
-                    <Dropdown.Item>Sign out</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
+                    <Dropdown.Item>Earnings</Dropdown.Item>
                   </Dropdown>
                 </div>
               </a>

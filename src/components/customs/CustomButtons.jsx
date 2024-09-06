@@ -10,10 +10,12 @@ const CustomButton = ({
 	paddingLeft,
 	paddingRight,
 	borderRad,
+	disabled,
 }) => {
 	return (
 		<button
 			type={type}
+			disabled={disabled}
 			className="h-full p-3 hover:opacity-90 hover:font-bold rounded-md"
 			onClick={onClick}
 			style={{

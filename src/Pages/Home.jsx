@@ -3,7 +3,6 @@ import project from "../assets/images/project.png";
 import invoice from "../assets/images/invoice.png";
 import task from "../assets/images/task.png";
 import aboutimg from "../assets/images/aboutimg.svg";
-import join from "../assets/images/join.svg";
 import testpic from "../assets/images/testpic.png";
 import testbg from "../assets/images/testbg.svg";
 import quote from "../assets/images/quote.svg";
@@ -12,11 +11,11 @@ import PartnerCarousel from "../components/Partner/partners";
 import LandHero from "../components/Sections/Hero/LandHero";
 import "../components/Sections/section-styles.scss";
 import Navigation from "../components/Sections/Navigation/Navigation";
-import eclipse from "../assets/images/Ellipse 65.svg";
 import David from "../assets/images/David.svg";
 import Jeremy from "../assets/images/Jeremy.svg";
 import Footer from "../components/Sections/Footer/footer";
 import { Link, useLocation } from "react-router-dom";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 
 const Home = () => {
 	const { hash } = useLocation();
@@ -362,62 +361,100 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
-					<form className=" px-2 mx-12 pb-24 lg:pt-20 lg:mt-8 sm:pb-32 lg:px-8 lg:py-32">
-						<div className=" mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-							<h2 className=" text-3xl text-left mb-4 font-bold tracking-tight text-[#0C335E]">
-								Contact Us
-							</h2>
-							<p className=" text-sm text-left mb-6 font-normal text-[#09223E]">
-								Do you have any questions or comments? Our team will respond to
-								your enquiry as soon as possible.
-							</p>
-							<div className=" grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-								<div>
-									<div className=" mt-2.5">
-										<input
-											type="email"
-											id="email"
-											placeholder="Enter your Email"
-											autocomplete="email"
-											className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-											name="email"
-										/>
+					<Formik
+						initialValues={{ email: "", fullname: "", message: "" }}
+						validate={(values) => {
+							const errors = {};
+							if (
+								values.email ===
+								!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+							) {
+								errors.email = "Invalid email address";
+							}
+
+							return errors;
+						}}
+						onSubmit={(values, { setSubmitting }) => {
+							setTimeout(() => {
+								alert(JSON.stringify(values, null, 2));
+								setSubmitting(false);
+							}, 400);
+						}}
+					>
+						{({ isSubmitting }) => (
+							<Form className=" px-2 mx-12 pb-24 lg:pt-20 lg:mt-8 sm:pb-32 lg:px-8 lg:py-32">
+								<div className=" mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+									<h2 className=" text-3xl text-left mb-4 font-bold tracking-tight text-[#0C335E]">
+										Contact Us
+									</h2>
+									<p className=" text-sm text-left mb-6 font-normal text-[#09223E]">
+										Do you have any questions or comments? Our team will respond
+										to your enquiry as soon as possible.
+									</p>
+									<div className=" grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+										<div>
+											<div className=" mt-2.5">
+												<Field
+													type="email"
+													id="email"
+													placeholder="Enter your Email"
+													autocomplete="email"
+													className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+													name="email"
+												/>
+												<ErrorMessage
+													name="email"
+													component="div"
+													className="text-red-400"
+												/>
+											</div>
+										</div>
+										<div>
+											<div className=" mt-2.5">
+												<Field
+													type="text"
+													id="name"
+													placeholder="Enter your Name"
+													autocomplete="name"
+													className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+													name="fullname"
+												/>
+												<ErrorMessage
+													name="fullname"
+													component="div"
+													className="text-red-400"
+												/>
+											</div>
+										</div>
+										<div className=" sm:col-span-2">
+											<div className=" mt-2.5">
+												<Field
+													id="message"
+													placeholder="Enter your message"
+													rows="6"
+													className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+													name="message"
+												></Field>
+												<ErrorMessage
+													name="email"
+													component="div"
+													className="text-red-400"
+												/>
+											</div>
+										</div>
+									</div>
+									<div className=" mt-8 flex justify-center">
+										<button
+											type="submit"
+											className=" bg-[#F66030] px-12 md:px-56 py-3 text-sm font-semibold text-[#0C335E] transition-colors duration-150 ease-in-out hover:border-blue-[#85C1E9] hover:bg-[#85C1E9]"
+										>
+											SUBMIT
+										</button>
 									</div>
 								</div>
-								<div>
-									<div className=" mt-2.5">
-										<input
-											type="text"
-											id="name"
-											placeholder="Enter your Name"
-											autocomplete="name"
-											className=" block w-full rounded-md border-1 border-[#09223E] px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-											name="name"
-										/>
-									</div>
-								</div>
-								<div className=" sm:col-span-2">
-									<div className=" mt-2.5">
-										<textarea
-											id="message"
-											placeholder="Enter your message"
-											rows="6"
-											className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-											name="message"
-										></textarea>
-									</div>
-								</div>
-							</div>
-							<div className=" mt-8 flex justify-center">
-								<button
-									type="submit"
-									className=" bg-[#F66030] px-12 md:px-56 py-3 text-sm font-semibold text-[#0C335E] transition-colors duration-150 ease-in-out hover:border-blue-[#85C1E9] hover:bg-[#85C1E9]"
-								>
-									SUBMIT
-								</button>
-							</div>
-						</div>
-					</form>
+							</Form>
+						)}
+					</Formik>
 				</div>
 			</section>
 			<Footer />

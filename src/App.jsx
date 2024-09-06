@@ -3,6 +3,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUpPage";
 import Home from "./Pages/Home";
 import Services from "./Pages/Services";
+import TempDashboard from "./Pages/TempDashboard";
 
 // App.jsx
 function App() {
@@ -13,6 +14,7 @@ function App() {
 				<Route path="/services" element={<Services />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/sign-up" element={<SignUp />} />
+				<Route path="/temp-dashboard" element={<TempDashboard />} />
 			</Routes>
 		</>
 	);

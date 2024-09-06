@@ -3,6 +3,7 @@ import CustomButton from "../../customs/CustomButtons";
 import heroimg from "../../../assets/images/heroimg.svg";
 import CustomInput from "../../customs/CustomInput";
 import "./hero.scss";
+import { Form, Formik } from "formik";
 
 function LandHero() {
 	return (
@@ -21,23 +22,53 @@ function LandHero() {
 							boost productivity with a comprehensive all in one platform to
 							consolidate your tools and streamline your workflow
 						</p>
-						<div className="md:flex block gap-5 mt-10">
-							<div className="basis-3/4">
-								<CustomInput
-									placeholder="Enter your email"
-									bgCol="#E7F3FB"
-									borderRad="0.375rem"
-								/>
-							</div>
-							<div className="w-auto w-full basis-1/4 max-md:mt-5">
-								<CustomButton
-									txtColor="#09223E"
-									bgColor="#F66030"
-									btnText="Sign Up"
-									width="100%"
-								/>
-							</div>
-						</div>
+						<Formik
+							initialValues={{ email: "" }}
+							validate={(values) => {
+								const errors = {};
+								if (
+									values.email ===
+									!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+										values.email
+									)
+								) {
+									errors.email = "Invalid email address";
+								}
+
+								return errors;
+							}}
+							onSubmit={(values, { setSubmitting }) => {
+								setTimeout(() => {
+									alert(JSON.stringify(values, null, 2));
+									setSubmitting(false);
+								}, 400);
+							}}
+						>
+							{({ isSubmitting }) => (
+								<Form>
+									<div className="md:flex block gap-5 mt-10">
+										<div className="basis-3/4">
+											<CustomInput
+												placeholder="Enter your email"
+												bgCol="#E7F3FB"
+												borderRad="0.375rem"
+												name={"email"}
+												type={"text"}
+											/>
+										</div>
+										<div className="w-auto w-full basis-1/4 max-md:mt-5">
+											<CustomButton
+												txtColor="#09223E"
+												bgColor="#F66030"
+												btnText="Sign Up"
+												width="100%"
+												type={"submit"}
+											/>
+										</div>
+									</div>
+								</Form>
+							)}
+						</Formik>
 					</div>
 				</div>
 				<div className="lg:w-1/2 lg:order-2 order-1 w-auto hidden md:block">

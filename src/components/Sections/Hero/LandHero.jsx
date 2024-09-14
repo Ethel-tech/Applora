@@ -13,14 +13,14 @@ function LandHero() {
 					<div>
 						<h1 className="text-[#0C335E] leading-snug text-4xl max-md:text-2xl font-normal ">
 							<span className="text-[#007BFF] text-5xl max-md:text-3xl font-bold pr-4">
-								Streamline
+								Simplify
 							</span>
-							your workflow with all-in-One Platform
+							your workflow with a single integrated solution that boosts.....
 						</h1>
 						<p className="mt-7 w-10/12">
 							Simplify your workflow with a single integrated solution that will
-							boost productivity with a comprehensive all in one platform to
-							consolidate your tools and streamline your workflow
+							boost productivity with a comprehensive all-in-one platform to
+							consolidate your tools and streamline your operation.
 						</p>
 						<Formik
 							initialValues={{ email: "" }}

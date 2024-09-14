@@ -75,14 +75,14 @@ const Home = () => {
 			<section className="container task mx-auto py-12 px-6 text-base">
 				<div>
 					<h2 className="md:text-5xl text-2xl font-bold text-[#0C335E] text-center">
-						Automate Tasks and workflow with Applora
+						Automate Tasks and Procedures with Applora
 					</h2>
 				</div>
 				<p className="lg:m-auto lg:mb-8 lg:w-1/2 text-center text-[#0C335E] font-medium mt-5 mb-8 ">
 					Transform the way you work with Applora. Our platform is designed to
-					streamline your daily tasks and workflows, allowing you to focus on
-					what truly matters. Eliminate repetitive tasks, and improve efficiency
-					across your projects.
+					efficiently run your daily tasks and workflows, allowing you to focus
+					on what truly matters. Eliminate repetitive tasks, and improve
+					efficiency across your projects.
 				</p>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8">
 					{/* <!-- Project Execution --> */}

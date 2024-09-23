@@ -10,4 +10,5 @@
 body {
 	font-family: "Nunito", sans-serif;
 	margin-bottom: 0 !important;
+	overflow-x: hidden !important;
 }

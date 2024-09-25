@@ -3,8 +3,10 @@ import CustomInput from "../../customs/CustomInput";
 import CustomButton from "../../customs/CustomButtons";
 import "../../Sections/section-styles.scss";
 import { Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 function Community() {
+	const navigate = useNavigate();
 	return (
 		<section className="community pt-28 flex items-center justify-center content-center">
 			<div className="lg:w-[80%]">
@@ -57,6 +59,9 @@ function Community() {
 										paddingRight="3%"
 										width="100%"
 										type={"submit"}
+										onClick={() => {
+											navigate("/sign-up");
+										}}
 									/>
 								</div>
 							</div>

@@ -35,7 +35,10 @@ function Tasks() {
 	};
 
 	return (
-		<section className="task-section mobile-tab-width pt-20 mt-10 px-8 md:max-lg:px-8 md:px-14 mt-22 relative">
+		<section
+			id="tasks"
+			className="task-section mobile-tab-width pt-20 mt-10 px-8 md:max-lg:px-8 md:px-14 mt-22 relative"
+		>
 			<div className="flex justify-end mb-4">
 				<button
 					onClick={() => setIsOpen(true)}
@@ -141,10 +144,10 @@ function Tasks() {
 							</tr>
 						</thead>
 						<tbody>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Customer's story
 								</td>
@@ -168,10 +171,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									User Research
 								</td>
@@ -195,10 +198,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Info Architecture
 								</td>
@@ -222,10 +225,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Lo-Fi wireframes
 								</td>
@@ -249,10 +252,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Customer's story
 								</td>
@@ -277,10 +280,10 @@ function Tasks() {
 								</td>
 							</tr>
 							{tasks.map((task, index) => (
-								<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+								<tr className="bg-white ">
 									<td
 										scope="row"
-										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 									>
 										{task.assignedTasks}
 									</td>
@@ -308,10 +311,10 @@ function Tasks() {
 								</tr>
 							))}
 							{/* 
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									User Research
 								</td>
@@ -334,10 +337,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Info Architecture
 								</td>
@@ -361,10 +364,10 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+							<tr className="bg-white ">
 								<td
 									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
 									Lo-Fi wireframes
 								</td>

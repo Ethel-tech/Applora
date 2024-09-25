@@ -20,9 +20,11 @@ function Logout() {
 	return (
 		<CustomButton
 			btnText="Logout"
-			bgColor="#F66030"
-			width="30%"
+			fontSize="22px"
+			txtColor="#F66030"
 			onClick={handleLogout}
+			paddingLeft="0"
+			fontWeight="700"
 		/>
 	);
 }

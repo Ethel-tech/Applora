@@ -3,12 +3,12 @@ import { Icon } from "@iconify/react";
 import "./dashboard-styles.scss";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ displayName }) {
 	return (
-		<nav className="header-section mobile-tab-width flex md:max-lg:px-8 max-sm:flex-col md:items-center max-sm:gap-3 max-sm:px-6 md:pl-14 py-6 md:py-10 justify-between md:h-14 ">
+		<nav className="header-section mobile-tab-width flex px-8 max-sm:flex-col md:items-center max-sm:gap-3 max-sm:px-6 md:pl-14 py-6 md:py-10 justify-between md:h-14 ">
 			<h2 className="text-black text-2xl lg:text-5xl font-bold md:justify-center md:item-center">
 				Welcome,
-				<span className="text-[#F66030]"> Dorothy Ubuara</span>
+				<span className="text-[#F66030]"> {displayName}</span>
 			</h2>
 			<div class="">
 				<ul class="flex items-center">

@@ -6,7 +6,7 @@ const NewMeeting = () => {
 	const [meetingDetails, setMeetingDetails] = useState({
 		date: "",
 		time: "",
-		topic: "",
+		subject: "",
 		with: "",
 	});
 	const [meetings, setMeetings] = useState([]);
@@ -37,7 +37,7 @@ const NewMeeting = () => {
 		e.preventDefault();
 		const updatedMeetings = [...meetings, meetingDetails];
 		setMeetings(updatedMeetings);
-		setMeetingDetails({ date: "", time: "", topic: "", with: "" });
+		setMeetingDetails({ date: "", time: "", subject: "", with: "" });
 		setIsOpen(false);
 	};
 
@@ -55,7 +55,7 @@ const NewMeeting = () => {
 				<div className="popup">
 					<h2>Add Meeting</h2>
 					<form onSubmit={handleAddMeeting}>
-						<div className="flex md:flex-row flex-col gap-2 md:gap-5">
+						<div className="flex md:flex-row flex-col gap-2 md:gap-5 ">
 							<div className="flex flex-col text-left gap-2 mb-4 popup-input">
 								<label>Select Date</label>
 								<input
@@ -79,13 +79,14 @@ const NewMeeting = () => {
 						</div>
 
 						<div className="flex flex-col text-left gap-2 mb-4 popup-input">
-							<label>Enter Topic</label>
+							<label>Enter Subject</label>
 							<textarea
 								type="text"
-								name="topic"
-								value={meetingDetails.topic}
+								name="subject"
+								rows={5}
+								value={meetingDetails.subject}
 								onChange={handleInputChange}
-								placeholder="Meeting Topic"
+								placeholder="Meeting Subject"
 								required
 							></textarea>
 						</div>

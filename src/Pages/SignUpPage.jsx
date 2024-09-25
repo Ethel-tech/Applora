@@ -43,7 +43,12 @@ function SignUp() {
 			console.log(values.email);
 			const user = userCredential.user;
 			await updateProfile(user, { displayName: values.fullname });
-			navigate("/temp-dashboard", { state: { displayName: values.fullname } });
+			navigate("/dashboard", {
+				state: {
+					displayName: values.fullname,
+					displayEmail: values.email,
+				},
+			});
 		} catch (error) {
 			setErrors({ general: error.message });
 			console.log("Error Signing Up", error);

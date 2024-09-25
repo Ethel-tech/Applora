@@ -32,6 +32,7 @@ function Login() {
 	};
 
 	const onSubmit = async (values, { setSubmitting, setErrors }) => {
+		console.log("Form values:", values);
 		try {
 			const userCredential = await signInWithEmailAndPassword(
 				auth,
@@ -40,8 +41,15 @@ function Login() {
 			);
 			console.log(values.email);
 			const user = userCredential.user;
-			navigate("/temp-dashboard", {
-				state: { displayName: user.displayName || user.email },
+			console.log("Navigating with:", values.fullname, values.email);
+			console.log("User displayName:", user.displayName);
+			console.log("User email:", user.email);
+
+			navigate("/dashboard", {
+				state: {
+					displayName: user.displayName || "user",
+					displayEmail: values.email,
+				},
 			});
 		} catch (error) {
 			console.error("Error in login in", error);

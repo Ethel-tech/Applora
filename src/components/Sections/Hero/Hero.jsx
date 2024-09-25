@@ -1,8 +1,10 @@
 import React from "react";
 import CustomButton from "../../customs/CustomButtons";
 import lady from "../../../assets/images/lady.svg";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+	const navigate = useNavigate();
 	return (
 		<section className="h-full lg:mt-20 md:mt-32 mt-24 px-24 py-14 max-md:px-10 bg-[#85C1E9] text-[#09223E] text-base">
 			<div className="flex gap-32 max-md:block">
@@ -22,6 +24,9 @@ function Hero() {
 								txtColor="#09223E"
 								bgColor="#F66030"
 								btnText="Sign Up"
+								onClick={() => {
+									navigate("/sign-up");
+								}}
 							/>
 						</div>
 						<p className="mt-7">

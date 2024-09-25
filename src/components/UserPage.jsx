@@ -4,10 +4,10 @@ import ProgressTab from "./DasboardComponents/ProgressTab";
 import Tasks from "./DasboardComponents/Tasks";
 import CalendarSection from "./DasboardComponents/CalendarSection";
 
-function UserPage() {
+function UserPage({ displayName }) {
 	return (
 		<>
-			<Header />
+			<Header displayName={displayName} />
 			<ProgressTab />
 			<Tasks />
 			<CalendarSection />

@@ -5,6 +5,7 @@ const CustomButton = ({
 	txtColor = "",
 	border = "",
 	fontSize = "",
+	fontWeight,
 	width,
 	type,
 	paddingLeft,
@@ -27,6 +28,7 @@ const CustomButton = ({
 				width: width,
 				paddingLeft: paddingLeft,
 				paddingRight: paddingRight,
+				fontWeight: fontWeight,
 			}}
 		>
 			{btnText}

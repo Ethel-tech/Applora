@@ -4,8 +4,10 @@ import heroimg from "../../../assets/images/heroimg.svg";
 import CustomInput from "../../customs/CustomInput";
 import "./hero.scss";
 import { Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 function LandHero() {
+	const navigate = useNavigate();
 	return (
 		<section className="hero-bg md:pb-12 lg:mt-36 md:mt-32 mt-24 h-full px-24 max-md:py-10 max-md:px-10 bg-white text-[#09223E] text-base">
 			<div className="flex lg:flex-row md:flex-col md:gap-20 lg:gap-32 max-md:block max-md:w-auto">
@@ -37,11 +39,8 @@ function LandHero() {
 
 								return errors;
 							}}
-							onSubmit={(values, { setSubmitting }) => {
-								setTimeout(() => {
-									alert(JSON.stringify(values, null, 2));
-									setSubmitting(false);
-								}, 400);
+							onSubmit={() => {
+								navigate("/sign-up");
 							}}
 						>
 							{({ isSubmitting }) => (

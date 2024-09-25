@@ -14,10 +14,11 @@ import Navigation from "../components/Sections/Navigation/Navigation";
 import David from "../assets/images/David.svg";
 import Jeremy from "../assets/images/Jeremy.svg";
 import Footer from "../components/Sections/Footer/footer";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 const Home = () => {
+	const navigate = useNavigate();
 	const { hash } = useLocation();
 
 	useEffect(() => {
@@ -136,7 +137,9 @@ const Home = () => {
 							id="search-dropdown"
 							className="block p-2.5 text-start w-full text-medium text-[#09223E] bg-[#F8AF98] rounded-lg"
 							placeholder="Search Mockups, Logos, Design Templates..."
-							required
+							onClick={() => {
+								navigate("/services");
+							}}
 						>
 							Explore Services
 						</button>
@@ -374,10 +377,10 @@ const Home = () => {
 
 							return errors;
 						}}
-						onSubmit={(values, { setSubmitting }) => {
+						onSubmit={(values, { resetForm, setSubmitting }) => {
 							setTimeout(() => {
-								alert(JSON.stringify(values, null, 2));
 								setSubmitting(false);
+								resetForm();
 							}, 400);
 						}}
 					>

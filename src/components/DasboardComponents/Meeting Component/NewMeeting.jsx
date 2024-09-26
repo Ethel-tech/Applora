@@ -11,22 +11,22 @@ const NewMeeting = () => {
 	});
 	const [meetings, setMeetings] = useState([]);
 
-	//load meetings from localStorage when the component mounts
-	useEffect(() => {
-		const savedMeetings = JSON.parse(localStorage.getItem("meetings"));
-		console.log("Meetings loaded from localStorage:", savedMeetings);
+	// //load meetings from localStorage when the component mounts
+	// useEffect(() => {
+	// 	const savedMeetings = JSON.parse(localStorage.getItem("meetings"));
+	// 	console.log("Meetings loaded from localStorage:", savedMeetings);
 
-		if (savedMeetings) {
-			console.log("Loaded meetings from localStorage:", savedMeetings);
-			setMeetings(savedMeetings);
-		}
-	}, []);
+	// 	if (savedMeetings) {
+	// 		console.log("Loaded meetings from localStorage:", savedMeetings);
+	// 		setMeetings(savedMeetings);
+	// 	}
+	// }, []);
 
-	//Update localStorage whenever the meetings state changes
-	useEffect(() => {
-		localStorage.setItem("meetings", JSON.stringify(meetings));
-		console.log("Updated localStorage with meetings:", meetings);
-	}, [meetings]);
+	// //Update localStorage whenever the meetings state changes
+	// useEffect(() => {
+	// 	localStorage.setItem("meetings", JSON.stringify(meetings));
+	// 	console.log("Updated localStorage with meetings:", meetings);
+	// }, [meetings]);
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
@@ -122,7 +122,7 @@ const NewMeeting = () => {
 					<div key={index} className="meeting-list-div max-md:w-full">
 						<p className="meeting-list-div-time">{meeting.time}</p>
 						<p className="meeting-list-div-date">{meeting.date}</p>
-						<p className="meeting-list-div-topic">{meeting.topic}</p>
+						<p className="meeting-list-div-topic">{meeting.subject}</p>
 						<p className="meeting-list-div-date">With {meeting.with}</p>
 					</div>
 				))}

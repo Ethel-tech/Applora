@@ -16,6 +16,7 @@ import Jeremy from "../assets/images/Jeremy.svg";
 import Footer from "../components/Sections/Footer/footer";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import Swal from "sweetalert2";
 
 const Home = () => {
 	const navigate = useNavigate();
@@ -379,6 +380,12 @@ const Home = () => {
 						}}
 						onSubmit={(values, { resetForm, setSubmitting }) => {
 							setTimeout(() => {
+								Swal.fire({
+									title: "Success!",
+									text: "Form successfully submitted",
+									icon: "success",
+									confirmButtonText: "OK",
+								});
 								setSubmitting(false);
 								resetForm();
 							}, 400);

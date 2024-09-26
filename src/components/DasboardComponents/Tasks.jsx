@@ -82,7 +82,7 @@ function Tasks() {
 								required
 							/>
 						</div>
-						<div className="flex flex-col text-left gap-2 mb-4 popup-input">
+						{/* <div className="flex flex-col text-left gap-2 mb-4 popup-input">
 							<label>Status</label>
 							<input
 								type="text"
@@ -101,7 +101,7 @@ function Tasks() {
 								onChange={handleInputChange}
 								required
 							/>
-						</div>
+						</div> */}
 						<div className="flex flex-col md:flex-row max-md:mt-4 gap-5 popup-input-btn ">
 							<button type="submit" className="bg-[#007bff] p-4 text-[white]">
 								Add
@@ -198,33 +198,7 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
-							<tr className="bg-white ">
-								<td
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-								>
-									Info Architecture
-								</td>
-								<td className="px-6 py-4">Worksmart</td>
-								<td className="px-6 py-4">Sept 15, 2024</td>
-								<td className="px-6 py-4 text-[#24AB0E]">Complete</td>
-								<td className="px-6 py-4 ">
-									<div className="flex items-center">
-										<div className="inline-flex gap-3  items-center justify-center">
-											<span className="text-[#007bff]">100%</span>
-											<span>
-												<ProgressBar
-													completed={100}
-													customLabel={" "}
-													bgColor="#24AB0E"
-													height="0.5rem"
-													width="5rem"
-												/>
-											</span>
-										</div>
-									</div>
-								</td>
-							</tr>
+
 							<tr className="bg-white ">
 								<td
 									scope="row"
@@ -252,25 +226,26 @@ function Tasks() {
 									</div>
 								</td>
 							</tr>
+
 							<tr className="bg-white ">
 								<td
 									scope="row"
 									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
 								>
-									Customer's story
+									Info Architecture
 								</td>
-								<td className="px-6 py-4">Applora</td>
-								<td className="px-6 py-4">July 23, 2024</td>
+								<td className="px-6 py-4">Worksmart</td>
+								<td className="px-6 py-4">Sept 15, 2024</td>
 								<td className="px-6 py-4 text-[#007bff]">Working</td>
 								<td className="px-6 py-4 ">
 									<div className="flex items-center">
 										<div className="inline-flex gap-3  items-center justify-center">
-											<span className="text-[#007bff]">50%</span>
+											<span className="text-[#007bff]">80%</span>
 											<span>
 												<ProgressBar
-													completed={50}
+													completed={80}
 													customLabel={" "}
-													bgColor="#FFA500"
+													bgColor="#24AB0E"
 													height="0.5rem"
 													width="5rem"
 												/>
@@ -289,18 +264,16 @@ function Tasks() {
 									</td>
 									<td className="px-6 py-4">{task.projects}</td>
 									<td className="px-6 py-4">{task.startDate}</td>
-									<td className="px-6 py-4 text-[#007bff]">
-										{task.currentStatus}
-									</td>
+									<td className="px-6 py-4 text-[#E90E0E]">Not Started</td>
 									<td className="px-6 py-4 ">
 										<div className="flex items-center">
 											<div className="inline-flex gap-3  items-center justify-center">
-												<span className="text-[#007bff]">50%</span>
+												<span className="text-[#007bff]">0%</span>
 												<span>
 													<ProgressBar
-														completed={50}
+														completed={0}
 														customLabel={" "}
-														bgColor="#FFA500"
+														bgColor="#E90E0E"
 														height="0.5rem"
 														width="5rem"
 													/>
@@ -310,87 +283,6 @@ function Tasks() {
 									</td>
 								</tr>
 							))}
-							{/* 
-							<tr className="bg-white ">
-								<td
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-								>
-									User Research
-								</td>
-								<td className="px-6 py-4">Jira</td>
-								<td className="px-6 py-4">Aug 3, 2024</td>
-								<td className="px-6 py-4">Not Started</td>
-								<td className="px-6 py-4 ">
-									<div className="flex items-center">
-										<div className="inline-flex gap-3  items-center justify-center">
-											<span className="text-[#007bff]">0%</span>
-											<span>
-												<ProgressBar
-													completed={0}
-													customLabel={" "}
-													height="0.5rem"
-													width="5rem"
-												/>
-											</span>
-										</div>
-									</div>
-								</td>
-							</tr>
-							<tr className="bg-white ">
-								<td
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-								>
-									Info Architecture
-								</td>
-								<td className="px-6 py-4">Worksmart</td>
-								<td className="px-6 py-4">Sept 15, 2024</td>
-								<td className="px-6 py-4 text-[#24AB0E]">Complete</td>
-								<td className="px-6 py-4 ">
-									<div className="flex items-center">
-										<div className="inline-flex gap-3  items-center justify-center">
-											<span className="text-[#007bff]">100%</span>
-											<span>
-												<ProgressBar
-													completed={100}
-													customLabel={" "}
-													bgColor="#24AB0E"
-													height="0.5rem"
-													width="5rem"
-												/>
-											</span>
-										</div>
-									</div>
-								</td>
-							</tr>
-							<tr className="bg-white ">
-								<td
-									scope="row"
-									className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-								>
-									Lo-Fi wireframes
-								</td>
-								<td className="px-6 py-4">Asana</td>
-								<td className="px-6 py-4">Dec 12, 2024</td>
-								<td className="px-6 py-4 text-[#24AB0E]">Complete</td>
-								<td className="px-6 py-4 ">
-									<div className="flex items-center">
-										<div className="inline-flex gap-3  items-center justify-center">
-											<span className="text-[#007bff]">100%</span>
-											<span>
-												<ProgressBar
-													completed={100}
-													bgColor="#24AB0E"
-													customLabel={" "}
-													height="0.5rem"
-													width="5rem"
-												/>
-											</span>
-										</div>
-									</div>
-								</td>
-							</tr> */}
 						</tbody>
 					</table>
 				</div>

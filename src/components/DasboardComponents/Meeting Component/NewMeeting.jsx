@@ -117,7 +117,7 @@ const NewMeeting = () => {
 				</div>
 			)}
 
-			<div className="meeting-list w-full lg:ml-6 md:max-lg:mt-6 flex flex-wrap gap-5 ">
+			<div className="meeting-list w-full lg:ml-6 md:max-lg:mt-6 mt-4 flex flex-wrap gap-5 ">
 				{meetings.map((meeting, index) => (
 					<div key={index} className="meeting-list-div max-md:w-full">
 						<p className="meeting-list-div-time">{meeting.time}</p>
